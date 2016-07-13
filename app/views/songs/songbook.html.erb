@@ -1,0 +1,13 @@
+<h1>DK Songbook</h1>
+
+<ul>
+  <li class="songs-header">
+    <span class="title">Song Title</span>
+    <span class="artist">Artist</span>
+  <% @songs.take(100).each do |song| %>
+    <li class="song">
+      <span class="title"><%= song.songTitle %></span>
+      <span class="artist"><%= song.artist %> </span>
+    </li>
+  <% end %>
+</ul>
