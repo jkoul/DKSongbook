@@ -1,0 +1,77 @@
+@mixin clearfix(){
+  &:after{
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.song-list-container {
+  position: relative;
+
+  .list {
+    width: 100%;
+    padding-left: 0;
+    display: table;
+
+    .songs-header {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-bottom: 20px;
+      background: #ccf;
+      border-top: 1px solid #ccc;
+    }
+
+    .song, .songs-header {
+      display: table-row;
+      list-style: none;
+      width: 100%;
+      @include clearfix;
+
+      .title, .artist, .dk-id {
+        display: table-cell;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 25px;
+      }
+    }
+
+    .song {
+      &:nth-of-type(2n+1) {
+        background: #eee;
+      }
+
+      &:hover {
+        background: #ddf;
+      }
+    }
+  }
+}
+
+.pagination {
+  display: block;
+  text-align: center;
+  .pagination-page, .pagination-first, .pagination-prev, .pagination-next, .pagination-last {
+    list-style: none;
+    a {
+      float: none;
+    }
+  }
+
+  .pagination-first, .pagination-prev, .pagination-next {
+    a {
+      margin-right: -4px;
+    }
+  }
+
+  .pagination-next {
+    a {
+      margin-left: -5px;
+    }
+  }
+}
