@@ -43,5 +43,16 @@
 
       self.pageSongs = self.songs.slice(begin, end);
     }
+
+    self.pageLabels = function($page) {
+      var begin = ($page - 1) * self.itemsPerPage;
+      var end = begin + self.itemsPerPage;
+
+      var firstSong = self.songs[begin];
+      var lastSong = self.songs[end];
+      var artistTwoLettersBegin = firstSong.artist.slice(0,2);
+      var artistTwoLettersEnd = lastSong.artist.slice(0,2);
+      return (artistTwoLettersBegin + " - " + artistTwoLettersEnd);
+    }
   }
 })()

@@ -1,7 +1,7 @@
 <div data-ui-sref="index">
 
   <div class="song-list-container">
-    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" force-ellipses="true">
+    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
     </uib-pagination>
     <ul class="list">
       <li class="songs-header">
@@ -15,7 +15,7 @@
         <span class="dk-id">{{song.publicId}}</span>
       </li>
     </ul>
-    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" force-ellipses="true">
+    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
     </uib-pagination>
   </div>
 
