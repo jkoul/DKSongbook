@@ -29,12 +29,15 @@
 
     self.songs = Song.query();
 
-    self.songs.$promise.then(function() {
+    self.songs.$promise.then(function($response) {
       self.totalItems = self.songs.length;
       self.itemsPerPage = 100;
       self.currentPage = 1;
       self.maxSize = 7;
       self.updatePage();
+      $('.hide-init').toggleClass('ng-hide');
+      $('.load-note').hide();
+      return $response;
     })
 
     self.updatePage = function() {

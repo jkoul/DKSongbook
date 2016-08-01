@@ -10,9 +10,23 @@
   box-sizing: border-box;
 }
 
+.site-title, .site-description {
+  text-align: center;
+}
 
 .song-list-container {
   position: relative;
+
+  .load-note {
+    text-align: center;
+  }
+
+  .results {
+    text-align: center;
+    .song-count {
+      font-weight: bold;
+    }
+  }
 
   .list {
     width: 100%;

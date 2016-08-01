@@ -1,22 +1,37 @@
 <div data-ui-sref="index">
 
   <div class="song-list-container">
-    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
-    </uib-pagination>
+
+    <!-- <input type="text" ng-model="search" placeholder="search book" /> -->
+
+    <div class="pagination-container hide-init ng-hide">
+      <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
+      </uib-pagination>
+    </div>
+
+    <div class="results hide-init ng-hide">Displaying songs <span class="song-count">{{songsCtrl.songs.indexOf(songsCtrl.pageSongs[0]) + 1}} - {{songsCtrl.songs.indexOf(songsCtrl.pageSongs[songsCtrl.itemsPerPage - 1]) + 1}}</span> of <span class="song-count">{{songsCtrl.songs.length}}</span> in total.</div>
+
     <ul class="list">
       <li class="songs-header">
         <span class="title">Song Title</span>
         <span class="artist">Artist</span>
         <span class="dk-id">Song ID</span>
       </li>
+
+      <!-- | fuzzyBy: 'artist': search  -->
       <li class="song" ng-repeat="song in songsCtrl.pageSongs | limitTo:100">
         <span class="title">{{song.songTitle}}</span>
         <span class="artist">{{song.artist}}</span>
         <span class="dk-id">{{song.publicId}}</span>
       </li>
     </ul>
-    <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
-    </uib-pagination>
+
+    <h4 class="load-note">Please be patient: songs may take a few seconds to appear</h4>
+
+    <div class="pagination-container hide-init ng-hide">
+      <uib-pagination ng-model="songsCtrl.currentPage" total-items="songsCtrl.totalItems" items-per-page="songsCtrl.itemsPerPage" max-size="songsCtrl.maxSize" ng-change="songsCtrl.updatePage()" boundary-links="true" class="pagination-md" page-label="songsCtrl.pageLabels($page)" force-ellipses="true">
+      </uib-pagination>
+    </div>
   </div>
 
 </div>

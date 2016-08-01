@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20160712181901) do
   enable_extension "plpgsql"
 
   create_table "songs", force: :cascade do |t|
-    t.string "songTitle"
-    t.string "artist"
-    t.string "publicId"
+    t.string   "songTitle"
+    t.string   "artist"
+    t.string   "publicId"
+    t.integer  "internalId"
+    t.datetime "dateCreated"
+    t.datetime "dateUpdated"
   end
 
 end
